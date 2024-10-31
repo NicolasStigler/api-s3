@@ -3,7 +3,7 @@ import boto3
 s3_client = boto3.client('s3')
 
 def lambda_handler(event, context):
-    body = json.loads(event['body'])
+    body = event['body']
     bucket_name = body['bucket_name']
     directory_name = body['directory_name']
     
