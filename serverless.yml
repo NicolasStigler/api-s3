@@ -22,7 +22,6 @@ functions:
           integration: lambda
   lista_objetos_bucket:
     handler: lista_objetos_bucket.lambda_handler
-    memorySize: 512
     events:
       - http:
           path: /s3/bucket/lista-objetos
@@ -30,7 +29,7 @@ functions:
           cors: true
           integration: lambda
   create_bucket:
-    handler: handler.create_bucket.lambda_handler
+    handler: create_bucket.lambda_handler
     memorySize: 512
     events:
       - http:
@@ -39,8 +38,7 @@ functions:
           cors: true
           integration: lambda
   create_directory:
-    handler: handler.create_directory.lambda_handler
-    memorySize: 512
+    handler: create_directory.lambda_handler
     events:
       - http:
           path: /s3/bucket/create-directory
@@ -48,7 +46,7 @@ functions:
           cors: true
           integration: lambda
   upload_file:
-    handler: handler.upload_file.lambda_handler
+    handler: upload_file.lambda_handler
     memorySize: 512
     events:
       - http:
